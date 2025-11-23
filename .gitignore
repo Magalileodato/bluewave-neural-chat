@@ -57,7 +57,13 @@ env.bak/
 
 instance/
 temp_files/
-migrations/
+
+# ⚠ Antes tinha "migrations/" aqui.
+#   Comentamos essa linha para que as migrations sejam versionadas no Git.
+#   Sem versionar migrations (ex.: backend/chat/migrations/0001_initial.py),
+#   o Render não recebe esses arquivos e não consegue criar as tabelas no deploy.
+# migrations/
+
 data/*.db
 data/*.sqlite3
 data/*.tmp
@@ -199,7 +205,11 @@ migrate_working_dir/
 # BACKEND
 backend/__pycache__/
 backend/staticfiles/
-#backend/db.sqlite3 foi cometado para criar as tabelas no render a versao gratuita nao permite 
+
+# Antes o db.sqlite3 estava comentado para testes.
+# Agora deixamos ele IGNORADO de propósito, para não versionar o banco local.
+# O Render recria as tabelas com `python manage.py migrate`, usando as migrations versionadas.
+backend/db.sqlite3
 
 # FRONTEND
 frontend/dist/
