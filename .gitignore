@@ -199,7 +199,7 @@ migrate_working_dir/
 # BACKEND
 backend/__pycache__/
 backend/staticfiles/
-backend/db.sqlite3
+#backend/db.sqlite3 foi cometado para criar as tabelas no render a versao gratuita nao permite 
 
 # FRONTEND
 frontend/dist/
