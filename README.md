@@ -33,6 +33,71 @@ O sistema permite:
 
 🐳 Execução fullstack via Docker Compose
 
+
+## 🌐 Versão Online (Render)
+
+O BlueWave Neural Chat também está implantado e funcionando em ambiente real no Render, simulando um cenário de produção completo.
+
+### 🔗 Endpoints do Deploy
+
+- 🌍 **Backend (API Django + DRF)**  
+  https://bluewave-neural-chat.onrender.com
+
+- 💻 **Frontend (SPA React)**  
+  https://bluewave-neural-chat-1.onrender.com
+
+> O frontend consome a API hospedada no backend acima.  
+> O deploy foi configurado com migrations, Start Command customizado e build automatizado do Render.
+
+
+## 📸 Deploy no Render (prints)
+
+
+### ⚙️ Processo de implantação no Render
+<img src="images/screenshots/render-implemetado.png" width="650"/>
+
+### ✔ Serviço online após migrações
+<img src="images/screenshots/render-ok.png" width="650"/>
+
+
+## 🎯 Objetivo da Implantação no Render
+
+A implantação deste projeto no Render foi realizada com o propósito de demonstrar domínio completo sobre:
+
+- **Deploy real de aplicações fullstack**
+- **Configuração de ambientes em produção**
+- **Execução de migrations em cenários sem acesso ao shell**
+- **Ajustes necessários para rodar Django + DRF em servidores serverless**
+- **Integração entre SPA React e API Django em ambiente remoto**
+
+Embora o projeto também rode 100% local via Docker ou manualmente,
+o deploy no Render serve como **validação prática** de que toda a arquitetura funciona em:
+
+- Ambiente Linux remoto  
+- Build automático via GitHub  
+- Instância web com Start Command configurado  
+- Banco SQLite gerenciado pelo serviço  
+- Fluxo CI/CD simplificado (push → build → deploy)
+
+### 🔍 Por que usar o Render?
+
+O Render foi escolhido por três motivos principais:
+
+1. **Ambiente gratuito**, ideal para provas técnicas e demonstrações.
+2. **Pipeline automatizado**, que permite validar se o projeto está pronto para produção.
+3. **Ambiente real**, que simula uma stack profissional: servidor Gunicorn, Python 3.13, build logs, migrações, rotas expostas, CORS e API acessível publicamente.
+
+### ✨ Benefícios demonstrados pelo deploy
+
+- O backend Django está rodando em produção com **Gunicorn** corretamente configurado.  
+- O build instala automaticamente todas as dependências do backend.  
+- As migrations foram integradas ao repositório Git e executam sem erro.  
+- O frontend React consegue consumir o backend por domínio público.  
+- Todo o fluxo de mensagens (Users A/B) funciona remotamente como no ambiente local.
+
+Essa implantação reforça que o projeto não é apenas local, mas **totalmente pronto para ser usado**, testado e escalado.
+
+
 ## 🧩 Diagrama de Arquitetura
 
                    ┌───────────────────────────────┐
