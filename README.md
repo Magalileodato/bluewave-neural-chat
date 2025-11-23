@@ -132,8 +132,10 @@ Essa implantação reforça que o projeto não é apenas local, mas **totalmente
                    │  • network bridge             │
                    └───────────────────────────────┘
 
-## 🗂 Estrutura do Projeto
+<details>
+  <summary><strong>📁  Estrutura Completa do Projeto</strong></summary>
 
+```text
 bluewave-neural-chat/
 ├── backend/                                        # 🧠 Backend Django + DRF
 │   ├── manage.py                                   # 🚀 Comandos Django (migrate, runserver...)
@@ -180,6 +182,10 @@ bluewave-neural-chat/
 ├── docker-compose.yml                              # 🐳 Orquestração dos containers
 ├── .gitignore                                      # 🙈 Ignorados (venv, node_modules...)
 └── README.md                                       # 📘 Documentação
+```
+
+</details>
+
 
 ## ⚙️ Tecnologias Utilizadas
 
