@@ -1,0 +1,400 @@
+/* ============================================================
+   🎨 ESTILOS GERAIS - BLUEWAVE NEURAL CHAT
+   Layout dark-tech estilo SaaS moderno (2025)
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   🌍 RESET & BASE
+   ------------------------------------------------------------ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  background: #0f172a;
+  color: #f1f5f9;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  color: #38bdf8;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+a:hover {
+  color: #0ea5e9;
+}
+
+/* ============================================================
+   🧭 NAVBAR PRINCIPAL (HTML) — root-navbar
+   ============================================================ */
+.root-navbar {
+  background: #1e293b;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.3rem 2.5rem;
+  min-height: 88px;      /* altura fixa */
+  position: sticky;
+  top: 0;
+  z-index: 60;           /* acima da navbar do React */
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  color: #38bdf8;
+  font-size: 1.3rem;
+}
+
+.logo-img {
+  width: 150px;           /* AUMENTA O TAMANHO DO BANNER */
+  height: auto;
+  filter: drop-shadow(0 0 12px rgba(56, 189, 248, 0.45));
+}
+
+/* ============================================================
+   🧭 NAVBAR INTERNA DO REACT (⚡ Chat / Histórico / Usuário ativo)
+   ============================================================ */
+.navbar {
+  background: #020617;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+  padding: 0.8rem 2.5rem;
+  position: sticky;
+  top: 88px;         /* POSICIONA LOGO ABAIXO DA root-navbar */
+  z-index: 50;
+  border-bottom: 1px solid #1f2937;
+}
+
+/* ============================================================
+   🔧 MAIN / CONTAINER
+   ============================================================ */
+.main-container {
+  padding: 2rem 2.5rem;
+}
+
+.page {
+  max-width: 960px;
+  margin: auto;
+}
+
+/* ============================================================
+   🏠 HERO - INTRO DO CHAT
+   ============================================================ */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 2.3rem 2rem;
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  border-radius: 16px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.7);
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.hero-text h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+  color: #f8fafc;
+}
+
+.hero-text h1 span {
+  color: #38bdf8;
+}
+
+.hero-text p {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(56, 189, 248, 0.12);
+  color: #38bdf8;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  margin-bottom: 0.6rem;
+}
+
+/* ============================================================
+   💬 CHAT
+   ============================================================ */
+.chat-section h2 {
+  color: #38bdf8;
+  margin-bottom: 0.8rem;
+  font-size: 1.4rem;
+}
+
+.chat-card {
+  background: #020617;
+  border-radius: 16px;
+  padding: 1.25rem;
+  border: 1px solid #1f2937;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.8);
+}
+
+/* Janela mensagens */
+.chat-window {
+  background: #020617;
+  border-radius: 10px;
+  border: 1px solid #1f2937;
+  padding: 0.75rem;
+  min-height: 220px;
+  max-height: 420px;
+  overflow-y: auto;
+  margin-bottom: 0.9rem;
+}
+
+.empty-state {
+  text-align: center;
+  color: #64748b;
+  padding: 2rem 0.5rem;
+}
+
+/* Mensagens */
+.message {
+  padding: 0.45rem 0.7rem;
+  border-radius: 10px;
+  margin: 0.35rem 0;
+  font-size: 0.9rem;
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+.message-user {
+  background: linear-gradient(135deg, #1d4ed8, #38bdf8);
+  color: #e5f4ff;
+  text-align: right;
+  margin-left: auto;
+}
+
+.message-bot {
+  background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), #020617);
+  border: 1px solid #1f2937;
+  border-left: 3px solid #38bdf8;       /* barra lateral azul do bot */
+  color: #e2e8f0;
+  text-align: left;
+  margin-right: auto;
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.22); /* glow leve “neural” */
+}
+
+/* Input */
+.input-form {
+  display: flex;
+  flex-direction: column; /* agora comporta input-wrapper + input-meta */
+  gap: 0.4rem;
+}
+
+.input-wrapper {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.input-form input {
+  flex: 1;
+  padding: 0.55rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid #334155;
+  background: #020617;
+  color: #e2e8f0;
+  font-size: 0.9rem;
+}
+
+.input-form input:focus {
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.35);
+}
+
+.input-form button {
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  background: #22c55e;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  color: #022c22;
+}
+
+.input-form button:hover {
+  background: #16a34a;
+}
+
+/* linha com meta do input (contador) */
+.input-meta {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.char-counter {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  opacity: 0.8;
+}
+
+.status-loading {
+  color: #38bdf8;
+  font-size: 0.85rem;
+}
+
+/* ============================================================
+   🗂 HISTÓRICO
+   ============================================================ */
+.history-section h2 {
+  color: #38bdf8;
+  margin-bottom: 0.5rem;
+}
+
+.history-meta {
+  color: #94a3b8;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ============================================================
+   📞 CONTATO & RODAPÉ
+   ============================================================ */
+.contact {
+  max-width: 960px;
+  margin: 3rem auto 2rem;
+  padding: 2rem;
+  background: #020617;
+  border-radius: 16px;
+  border: 1px solid #1f2937;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.75);
+}
+
+.contact h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.6rem;
+  color: #f9fafb;
+}
+
+.contact p {
+  margin-bottom: 1.1rem;
+  color: #cbd5e1;
+  font-size: 0.95rem;
+}
+
+.contact-btn {
+  display: inline-block;
+  padding: 0.7rem 1.6rem;
+  border-radius: 999px;
+  background: #3b82f6;
+  color: #f9fafb;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.15s ease;
+}
+
+.contact-btn:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.55);
+}
+
+.footer {
+  margin-top: 1rem;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #9ca3af;
+  border-top: 1px solid #1f2937;
+  background: #020617;
+}
+
+/* ============================================================
+   📱 RESPONSIVIDADE
+   ============================================================ */
+@media (max-width: 800px) {
+  .root-navbar {
+    padding: 1rem 1.4rem;
+    min-height: 78px;
+  }
+
+  .navbar {
+    padding: 0.7rem 1.4rem;
+    top: 78px;
+  }
+
+  .logo-img {
+    width: 70px;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 1.7rem;
+  }
+
+  .contact {
+    margin: 2.5rem 0 1.5rem;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .root-navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.7rem;
+    top: 78px;
+  }
+
+  .logo-img {
+    width: 60px;
+  }
+}
+
+/* Horário da mensagem — destaque premium azul neon */
+.message-time {
+  display: block;
+  margin-top: 0.6rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: #38bdf8; /* azul neon do tema */
+  opacity: 0.95;
+  text-align: right;
+  text-shadow: 0 0 6px rgba(56, 189, 248, 0.35);
+}

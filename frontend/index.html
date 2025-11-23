@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <!-- ============================================================
+         🌊 BlueWave Neural Chat — SPA Base (React + Vite)
+         Landing + SEO + Logo + OpenGraph (Para LinkedIn/WhatsApp)
+         ============================================================ -->
+
+    <meta charset="UTF-8" />
+    <title>BlueWave Neural Chat • Chatbot Simulado</title>
+
+    <meta
+      name="description"
+      content="Simule fluxos de atendimento com usuários A e B usando Django + React."
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- 🌐 SEO Social -->
+    <meta property="og:title" content="BlueWave Neural Chat" />
+    <meta
+      property="og:description"
+      content="Sistema fullstack para simular atendimento com usuários A e B."
+    />
+    <!-- ATENÇÃO: este arquivo deve existir em frontend/public/images/logo/ -->
+    <meta
+      property="og:image"
+      content="/images/logo/banner-bluewave.png"
+    />
+    <meta property="og:type" content="website" />
+
+    <!-- 🔵 Favicon (ícone da aba) -->
+    <!-- ATENÇÃO: este arquivo deve existir em frontend/public/images/logo/ -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="/images/logo/banner-bluewave.png"
+    />
+  </head>
+
+  <body>
+    <!-- ============================================================
+         🧭 NAVBAR PRINCIPAL (fixa, antes do React carregar)
+         ============================================================ -->
+    <header class="root-navbar">
+      <div class="logo">
+        <img
+          src="/images/logo/banner-bluewave.png"
+          alt="BlueWave Neural Chat Logo"
+          class="logo-img"
+        />
+        <span>BlueWave Neural Chat</span>
+      </div>
+    </header>
+
+    <!-- ============================================================
+         🌐 ROOT DA SPA REACT
+         ============================================================ -->
+    <main class="main-container">
+      <div id="root"></div>
+
+      <!-- ============================================================
+           📞 SEÇÃO DE CONTATO (estática, fora do React)
+           ============================================================ -->
+      <section id="contato" class="contact">
+        <h2>📞 Contato</h2>
+        <p>Gostou do projeto? Vamos conversar!</p>
+        <a href="mailto:magalileodato@gmail.com" class="contact-btn">
+          Enviar e-mail
+        </a>
+      </section>
+    </main>
+
+    <!-- ============================================================
+         ⚙️ RODAPÉ
+         ============================================================ -->
+    <footer class="footer">
+      <p>
+        © 2025 <strong>BlueWave Neural Chat</strong> • Desenvolvido por
+        <strong>Magali Leodato</strong>
+      </p>
+    </footer>
+
+    <!-- Vite Script -->
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

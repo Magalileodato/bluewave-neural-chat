@@ -1,0 +1,47 @@
+version: "3.9"
+
+# ============================================
+# 🐳 BLUEWAVE NEURAL CHAT - DOCKER COMPOSE
+# Backend (Django + DRF) + Frontend (React + Vite)
+# ============================================
+
+services:
+  # ------------------------------------------
+  # 🧠 BACKEND - DJANGO + DRF
+  # ------------------------------------------
+  backend:
+    build: ./backend              # Dockerfile localizado em ./backend
+    container_name: bluewave-backend
+    # Comando: aplica migrações e inicia o servidor Django
+    command: sh -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - ./backend:/app            # Monta o código local dentro do container (hot reload em dev)
+    ports:
+      - "8000:8000"               # Host:Container (API acessível em http://localhost:8000)
+    # environment:
+    #   - DJANGO_SETTINGS_MODULE=bluewave_backend.settings
+    #   - DEBUG=1
+
+  # ------------------------------------------
+  # 🎨 FRONTEND - REACT + VITE
+  # ------------------------------------------
+  frontend:
+    build: ./frontend             # Dockerfile localizado em ./frontend
+    container_name: bluewave-frontend
+    volumes:
+      - ./frontend:/app           # Código local montado para desenvolvimento
+      - /app/node_modules         # Volume anônimo para node_modules dentro do container
+    ports:
+      - "5173:5173"               # Host:Container (SPA em http://localhost:5173)
+    depends_on:
+      - backend                   # Garante que o backend suba antes do frontend
+    # environment:
+    #   - VITE_API_BASE_URL=http://localhost:8000/api
+
+# ============================================
+# 🔗 REDE (opcional: deixar o padrão do Docker)
+# ============================================
+# networks:
+#   default:
+#     name: bluewave-network
+#     driver: bridge

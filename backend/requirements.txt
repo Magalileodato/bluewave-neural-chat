@@ -1,0 +1,48 @@
+# ============================================
+# 📦 DEPENDÊNCIAS PRINCIPAIS (CORE)
+# ============================================
+
+# Framework web principal
+Django>=5.0
+
+# API REST (serializers, routers, viewsets, Response, etc.)
+djangorestframework>=3.15
+
+# Liberar acesso CORS entre frontend (React) e backend
+django-cors-headers>=4.0
+
+
+# ============================================
+# 🔧 UTILITÁRIOS RECOMENDADOS (se necessário no futuro)
+# ============================================
+# python-dotenv>=1.0         # Carregar variáveis de ambiente
+# drf-yasg>=1.21             # Documentação Swagger/OpenAPI
+# gunicorn>=21.0             # Servidor WSGI para produção
+# whitenoise>=6.5            # Servir arquivos estáticos em prod
+# psycopg2-binary>=2.9       # Para usar PostgreSQL (produção)
+# uvicorn>=0.30              # ASGI server (WebSockets)
+
+
+# ============================================
+# 🧪 TESTES / QA (opcionais)
+# ============================================
+# pytest>=8.0
+# pytest-django>=4.7
+# pytest-cov>=4.1
+
+
+# ============================================
+# 💻 FORMATAÇÃO / LINTING (opcionais)
+# ============================================
+# black>=24.0
+# flake8>=7.0
+# isort>=5.13
+
+
+# ============================================
+# 📌 OBSERVAÇÕES
+# --------------------------------------------
+# • Não incluir dependências desnecessárias.
+# • Manter o arquivo limpo e minimalista para o teste técnico.
+# • Comentários opcionais deixam espaço para evolução futura.
+# ============================================
