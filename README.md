@@ -42,6 +42,10 @@ O BlueWave Neural Chat também está implantado e funcionando em ambiente real n
 
 - 🌍 **Backend (API Django + DRF)**  
   https://bluewave-neural-chat.onrender.com
+ 
+  > Obs.: O backend é uma **API REST** e não possui página HTML.  
+  > Por isso, acessar a URL raiz (`/`)  exibi **404**, o que é esperado.  
+  > Os endpoints funcionais estão disponíveis dentro de `/api/...` e são consumidos pelo frontend React.
 
 - 💻 **Frontend (SPA React)**  
   https://bluewave-neural-chat-1.onrender.com
